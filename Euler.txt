@@ -1,0 +1,24 @@
+clc;
+clear;
+function [z]=Euler(x0, y0, n, yest, f)
+    h=(yest-x0)/n;
+    for i=1:n
+        z=y0+(f(x0,y0)*h)
+        x0=x0+h;
+        y0=z;
+    end
+    endfunction
+
+
+
+
+
+// 
+output
+
+deff('[z]=f(x,y)','z=(x+(2*y))')
+
+Euler(1,1,10,2,f)
+ ans  =
+ 
+    9.5855387  

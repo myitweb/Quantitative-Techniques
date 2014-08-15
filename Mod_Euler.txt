@@ -1,0 +1,23 @@
+clc;
+clear;
+function [z1]=Mod_Euler(x0, y0, n, yest, f)
+    h=(yest-x0)/n;
+    for i=1:n
+        z=y0+(f(x0,y0)*h)
+        z1=y0+((h/2)*(f(x0,y0)+f(x0+h,z)));
+        x0=x0+h;
+        y0=z;
+    end									
+    endfunction
+
+
+
+
+\\
+output
+eff('[z]=f(x,y)','z=(x+(3*y))')
+ 
+-->Mod_Euler(0,1,10,1,f)
+ ans  =
+ 
+    15.403391  

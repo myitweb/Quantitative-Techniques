@@ -1,0 +1,35 @@
+clc;
+clear;
+function [y]=falsepos(f)
+a=input("Enter the first root");
+b=input("Enter the second root");
+n=input("Enter the no of iterations")
+while(horner(f,a)*horner(f,b)>0)
+a=input("Enter the first root");
+b=input("Enter the second root");
+end
+for i=1:n
+    y=b-((b-a)/((horner(f,b)-horner(f,a))))*horner(f,b);
+    if((horner(f,a))*(horner(f,y))<0) then
+        b=y;
+    else
+        a=y;
+    end
+    disp(y);
+    end
+endfunction
+
+
+
+// Output :
+
+f=poly([-5,-2,0,1],'x','c')
+ f  =
+ 
+              3  
+  - 5 - 2x + x   
+
+falsepos(f)
+Enter the first root2
+Enter the second root3
+Enter the no of iterations6

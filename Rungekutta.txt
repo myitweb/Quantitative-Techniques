@@ -1,0 +1,34 @@
+clc;
+clear;
+function [z]=Rungekutta(f)
+    a=input("Enter the initial value of x0 :")
+    b=input("Enter the initial value of y0 :")
+    yest=input("Enter the value of x at which y is to be found :")
+    h=input("Enter the step size :")
+    n=(yest-a)/h;
+    
+    for i=1:n
+        k1=h*f(a,b);
+        k2=h*f((a+(h/2)),(b+k1));
+        k=(k1+k2)/2;
+        z=b+k;
+        a=a+h;
+        b=z;
+    end
+    endfunction
+
+
+//
+output
+deff('[z]=f(x,y)','z=(1+y^2)')
+ 
+Rungekutta(f)
+
+Enter the initial value of x0 :0
+Enter the initial value of y0 :0
+Enter the value of x at which y is to be found :0.2
+Enter the step size :0.2
+ ans  =
+ 
+    0.204  
+

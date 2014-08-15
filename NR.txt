@@ -1,0 +1,43 @@
+clc;
+clear;
+function [y]=NR(f)
+    x0=input("Enter the first root");
+    n=input("Enter the no of iterations");
+    f1=derivat(f);
+    for i=1:n
+        y=x0-(horner(f,x0)/horner(f1,x0));
+        x0=y;
+        disp(y);
+    end
+endfunction
+
+
+
+// output 
+f=poly([-9,-1,0,0,1],'x','c')
+ f  =
+ 
+             4  
+  - 9 - x + x   
+
+
+NR(f)
+Enter the first root 5
+Enter the no of iterations 7
+ 
+    3.7755511  
+ 
+    2.8868796  
+ 
+    2.2823941  
+ 
+    1.9418653  
+ 
+    1.8260155  
+ 
+    1.8135227  
+ 
+    1.8133867  
+ ans  =
+ 
+    1.8133867  
